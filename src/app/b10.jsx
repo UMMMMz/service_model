@@ -4,23 +4,18 @@ import gsap from "gsap";
 function B10() {
   const svgRef = useRef(null);
     useEffect(() => {
-        const tl = gsap.timeline({ repeat: Infinity}); // Loop indefinitely
+        const tl = gsap.timeline({ repeat: -1}); // Loop indefinitely
         // GSAP animation to move the SVG towards the left smoothly
         tl.to(svgRef.current, {
           x: 200, // Move 100 units towards the left
-          duration: 6, // Animation duration in seconds
-          ease: "power2.inOut", 
+          duration: 4, // Animation duration in seconds
+          ease: "power2.inOut",
+          yoyo:true ,
+          repeat:  -1 
         
           // Easing function for smooth motion
         });
-        tl.from(svgRef.current ,{
-          x: 0 ,
-          duration: 6, 
-          // Animation duration in seconds
-          ease: "power2.inOut",
-          yoyoEase: true  , 
-    
-        })
+       
           
     }, []); // Empty dependency array ensures this effect runs only once after initial render
   

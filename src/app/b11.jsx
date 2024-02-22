@@ -7,14 +7,15 @@ function B11() {
     const svgRef = useRef(null);
 
     useEffect(() => {
-        const tl = gsap.timeline({ repeat: Infinity }); // Loop indefinitely
+        const tl = gsap.timeline({ repeat: -1 }); // Loop indefinitely
         // GSAP animation to stretch the SVG along the y-axis
         tl.to(svgRef.current, {
         
             scaleY:  1.3 , // Stretch the SVG to twice its original height
           duration: 6, // Animation duration in seconds
           ease: "power2.inOut",
-          yoyoEase: 1 , // Easing function for smooth motion
+          yoyo: true ,
+          repeat: -1 // Easing function for smooth motion
         });
       }, []);
 

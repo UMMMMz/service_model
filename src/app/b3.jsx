@@ -10,7 +10,7 @@ function B2() {
         // GSAP animation to move the SVG towards the left smoothly
         tl.to(svgRef.current, {
           x: -200, // Move 100 units towards the left
-          duration: 6, // Animation duration in seconds
+          duration: 2, // Animation duration in seconds
           ease: "power1.inOut",
           yoyo: true, // Play the animation in reverse after completing
       repeat: -1,
